@@ -157,8 +157,14 @@ const mapSpecialFeatures = function(array){
 
 // PROBLEM #7 //
 
-const createNonsenseString = function(){
-    
+const createNonsenseString = function(array, index){
+    return array.reduce(function(acc, current){
+        if(current.title[index] !== undefined){
+            return acc + current.title[index];
+        } else {
+            return acc
+        }
+    }, "")
 };
 
 // PROBLEM #8 //
