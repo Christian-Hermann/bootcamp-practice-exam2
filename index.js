@@ -93,22 +93,34 @@ const collection = [
 
 // PROBLEM #1 //
 
-const setDigitalCode = function(){
-   
+const setDigitalCode = function(array, value){
+
+   for( var i = array.length - 1; i >= 0; i--){
+    if( i % 2 === 0){
+        array[i].digitalCode = value
+    }
+   }
+
+   return array;  
 };
 
 // PROBLEM #2 //
 
-const filterByGenreTag = function(){
-    
+const filterByGenreTag = function(array, tag){
+    return array.filter(function(movie){
+    return movie.genreTags.includes(tag);
+    })
 };
 
 
 
 // PROBLEM #3 //
 
-const filterBySpecialFeatureType = function(){
-    
+const filterBySpecialFeatureType = function(array, type){
+    return array.filter(function(movie){
+       return movie.specialFeatures(type)
+    });
+
 };
 
 
