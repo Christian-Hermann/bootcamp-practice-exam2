@@ -169,6 +169,9 @@ const createNonsenseString = function(array, index){
 
 // PROBLEM #8 //
 
-const getValues = function(){
+const getValues = function(object, props){
+    return props.map(function(key){
+        return object[key]
+    });
     
 };
