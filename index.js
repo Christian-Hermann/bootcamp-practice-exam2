@@ -118,7 +118,9 @@ const filterByGenreTag = function(array, tag){
 
 const filterBySpecialFeatureType = function(array, type){
     return array.filter(function(movie){
-       return movie.specialFeatures(type)
+      return movie.specialFeatures.some(function(feature){
+         return feature.type === type;
+      });
     });
 
 };
@@ -133,7 +135,10 @@ const getTopSpecialFeature = function(array, title){
 
 // PROBLEM #5 //
 
-const mapTitles = function(){
+const mapTitles = function(array){
+    return array.map(function(movie){
+ return movie.title + " (" + movie.year + ") - dir. " + movie.director;
+    });
     
 };
 
@@ -141,7 +146,12 @@ const mapTitles = function(){
 
 // PROBLEM #6 //
 
-const mapSpecialFeatures = function(){
+const mapSpecialFeatures = function(array){
+    return array.map(function(movie){
+        return movie.specialFeatures.map(function(feature){
+             return feature.title
+        });
+    });
     
 };
 
